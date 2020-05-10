@@ -141,6 +141,7 @@ var Site = function () {
     key: 'onReady',
     value: function onReady() {
       _lazysizes2.default.init();
+      this.fixWidows();
     }
   }, {
     key: 'fixWidows',
@@ -148,8 +149,9 @@ var Site = function () {
       // utility class mainly for use on headines to avoid widows [single words on a new line]
       (0, _jquery2.default)('.js-fix-widows').each(function () {
         var string = (0, _jquery2.default)(this).html();
-        string = string.replace(/ ([^ ]*)$/, '&nbsp;$1');
-        (0, _jquery2.default)(this).html(string);
+        var split = string.split('');
+        split[string.lastIndexOf(' ')] = '&nbsp;';
+        (0, _jquery2.default)(this).html(split.join(''));
       });
     }
   }]);
