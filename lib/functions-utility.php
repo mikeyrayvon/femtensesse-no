@@ -74,3 +74,26 @@ function echo_post_meta($post_id, $field_id) {
     echo '';
   }
 }
+
+function igv_project_dates($post_id) {
+  $start = get_post_meta($post_id, '_igv_project_start', true);
+  $end = get_post_meta($post_id, '_igv_project_end', true);
+  if (!empty($start) || !empty($end)) {
+    echo '<div>';
+    if (empty($start) || empty($end)) {
+      $date = !empty($end) ? $end : $start;
+      echo '<time datetime="' . date('Y-m-d', $date) . '">';
+      echo date('F j, Y', $date);
+      echo '</time>';
+    } else {
+      $same_year = date('Y', $start) === date('Y', $end);
+      echo '<time datetime="' . date('Y-m-d', $start) . '">';
+      echo $same_year ? date('F j', $start) : date('F j, Y', $start);
+      echo '</time> — ';
+      echo '<time datetime="' . date('Y-m-d', $end) . '">';
+      echo date('F j, Y', $end);
+      echo '</time>';
+    }
+    echo '</div>';
+  }
+}
