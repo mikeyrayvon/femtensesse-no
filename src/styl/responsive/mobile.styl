@@ -1,11 +1,11 @@
-$gutter = 14px
+$gutter = 10px
 
 $margin-micro = ($gutter / 3)
 $margin-tiny = ($gutter / 2)
 $margin-small = ($gutter)
 $margin-basic = ($gutter * 2)
-$margin-mid = ($gutter * 3.5)
-$margin-large = ($gutter * 5)
+$margin-mid = ($gutter * 3)
+$margin-large = ($gutter * 4)
 
 $font-size-basic = 12px
 $font-size-extra = 48px
@@ -14,8 +14,19 @@ $font-size-mid = 24px
 $font-size-small = 18px
 $font-size-tiny = 8px
 
-grid-maker(96%, $gutter, s)
+grid-maker(98%, $gutter, s)
 
 space-maker($margin-micro, $margin-tiny, $margin-small, $margin-basic, $margin-mid, $margin-large)
 
 font-sizes($font-size-basic, $font-size-extra, $font-size-large, $font-size-mid, $font-size-small, $font-size-tiny)
+
+.no-p-margin-bottom
+  p
+    margin-bottom: 0
+
+.top-thumb-holder
+  img
+    max-width: 350px
+    max-height: 350px
+    height: auto
+    width: auto
