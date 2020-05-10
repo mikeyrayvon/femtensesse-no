@@ -39,6 +39,25 @@ function igv_cmb_metaboxes() {
    * Reference: https://github.com/WebDevStudios/CMB2/blob/master/example-functions.php
   */
 
+  $post_metabox = new_cmb2_box( array(
+		'id'            => $prefix . 'post_metabox',
+		'title'         => esc_html__( 'Post Options', 'cmb2' ),
+		'object_types'  => array( 'post' ), // Post type
+	) );
+
+  $post_metabox->add_field( array(
+  	'name'    => 'Title',
+  	'id'      => $prefix . 'post_title',
+  	'type'    => 'text',
+  ) );
+
+  $post_metabox->add_field( array(
+  	'name'    => 'Authors',
+  	'id'      => $prefix . 'post_authors',
+  	'type'    => 'text',
+    'repeatable' => true
+  ) );
+
   $project_metabox = new_cmb2_box( array(
 		'id'            => $prefix . 'project_metabox',
 		'title'         => esc_html__( 'Project Options', 'cmb2' ),
