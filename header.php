@@ -26,8 +26,44 @@ get_template_part('partials/seo');
 <body <?php body_class(); ?>>
 <!--[if lt IE 9]><p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
 
-<section id="main-container">
+<?php
+$options = get_site_option('_igv_site_options');
+?>
 
-  <header id="header">
-    <h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
-  </header>
+<section id="main-container">
+  <main class="container grid-row padding-top-basic">
+    <header id="header" class="grid-item item-s-12 item-m-6 item-l-4">
+      <h1 class="font-size-large"><a href="<?php echo home_url(); ?>"><em><?php bloginfo('name'); ?></em></a></h1>
+      <div class="font-size-mid">
+        <div>
+        <?php
+          if (!empty($options['contact_address'])) {
+            echo !empty($options['contact_map_link']) ? '<a href="' . $options['contact_map_link'] . '">' : '';
+            echo '<span class="no-p-margin-bottom">' . apply_filters('the_content', $options['contact_address']) . '</span>';
+            echo !empty($options['contact_map_link']) ? '</a>' : '';
+          }
+        ?>
+        </div>
+        <div>
+        <?php
+          echo !empty($options['contact_phone']) ? '<a href="tel:' . str_replace(' ', '', $options['contact_phone']) . '">' . $options['contact_phone'] . '</a>' : '';
+        ?>
+        </div>
+        <div>
+        <?php
+          echo !empty($options['contact_email']) ? '<a href="mailto:' . str_replace(' ', '', $options['contact_email']) . '">' . $options['contact_email'] . '</a>' : '';
+        ?>
+        </div>
+      </div>
+      <?php
+        $info_page = get_page_by_path('info');
+        if ($info_page) {
+      ?>
+      <div class="margin-top-tiny">
+        <a href="<?php echo get_permalink($info_page); ?>">General Information and Mailing List</a>
+      </div>
+      <?php
+        }
+      ?>
+      </div>
+    </header>

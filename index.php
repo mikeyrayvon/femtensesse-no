@@ -1,44 +1,30 @@
 <?php
 get_header();
-?>
 
-<?php get_template_part('partials/demo'); ?>
+$args = array(
+  'post_type' => array('project'),
+  'posts_per_page' => 1,
+  'meta_key' => '_igv_project_type',
+	'meta_value' => 'exhibition'
+);
 
-<main id="main-content">
-  <section id="posts">
-    <div class="container">
-      <div class="grid-row">
+$top_query = new WP_Query($args);
+$top_id = null;
 
-<?php
-if (have_posts()) {
-  while (have_posts()) {
-    the_post();
-?>
-
-        <article <?php post_class('grid-item item-s-12'); ?> id="post-<?php the_ID(); ?>">
-
-          <a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
-
-          <?php the_content(); ?>
-
-        </article>
-
-<?php
+if ($top_query->have_posts()) {
+  while ($top_query->have_posts()) {
+    $top_query->the_post();
+    $top_id = $post->ID;
+    set_query_var( 'is_top', true );
+    get_template_part('partials/query-exhibition');
   }
-} else {
-?>
-        <article class="u-alert grid-item item-s-12"><?php _e('Sorry, no posts matched your criteria :{'); ?></article>
-<?php
-} ?>
+}
 
-      </div>
-    </div>
-  </section>
+wp_reset_postdata();
 
-  <?php get_template_part('partials/pagination'); ?>
+set_query_var( 'exclude_id', absint( $top_id ) );
+set_query_var( 'is_top', false );
+get_template_part('partials/query');
 
-</main>
-
-<?php
 get_footer();
 ?>
