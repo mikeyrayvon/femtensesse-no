@@ -41,7 +41,7 @@
   },
   "dependencies": {
     "globie-styl-library": "1.0.8",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "swiper": "^5.4.0"
   }
 }
