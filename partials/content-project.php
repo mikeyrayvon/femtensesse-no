@@ -8,7 +8,7 @@ $fair = get_post_meta($post->ID, '_igv_project_fair', true);
 $images = get_post_meta($post->ID, '_igv_images', true);
 ?>
 
-<div class="grid-item no-gutter item-s-12 item-m-6 item-l-8 grid-row justify-end">
+<div class="grid-item no-gutter item-s-12 item-m-6 item-l-8 grid-row justify-end margin-bottom-small">
   <div class="grid-item item-s-12 item-l-6">
     <div class="font-size-large">
       <?php
@@ -25,7 +25,7 @@ $images = get_post_meta($post->ID, '_igv_images', true);
   </div>
 </div>
 
-<article <?php post_class('grid-item no-gutter item-s-12 grid-row padding-top-basic'); ?> id="post-<?php the_ID(); ?>">
+<article <?php post_class('grid-item no-gutter item-s-12 grid-row'); ?> id="post-<?php the_ID(); ?>">
   <header class="u-visuallyhidden">
     <h1><?php the_title(); ?></h1>
   </header>
