@@ -21,3 +21,38 @@ function create_custom_pages() {
   }
 }
 add_filter( 'after_setup_theme', 'create_custom_pages' );
+
+add_action( 'after_setup_theme', 'igv_setup' );
+function igv_setup() {
+  add_theme_support( 'align-wide' );
+}
+
+add_filter( 'allowed_block_types', 'igv_allow_core_blocks' );
+function igv_allow_core_blocks( $allowed_block_types ) {
+  return array(
+    'core/paragraph',
+    'core/image',
+    'core/heading',
+    'core/gallery',
+    'core/list',
+    'core/quote',
+    'core/shortcode',
+    'core/archives',
+    'core/audio',
+    'core/button',
+    'core/code',
+    'core/embed',
+    'core-embed/twitter',
+    'core-embed/youtube',
+    'core-embed/instagram',
+    'core-embed/soundcloud',
+    'core-embed/spotify',
+    'core-embed/vimeo',
+    'core-embed/reddit',
+    'core/file',
+    'core/separator',
+    'core/block',
+    'core/spacer',
+    'core/video'
+  );
+}
