@@ -1,4 +1,4 @@
-$gutter = 10px
+$gutter = 20px
 
 $margin-micro = ($gutter / 3)
 $margin-tiny = ($gutter / 2)
@@ -7,18 +7,17 @@ $margin-basic = ($gutter * 2)
 $margin-mid = ($gutter * 3)
 $margin-large = ($gutter * 4)
 
-$font-size-basic = 12px
-$font-size-extra = 48px
-$font-size-large = 36px
-$font-size-mid = 24px
-$font-size-small = 18px
-$font-size-tiny = 8px
+$font-size-large = 24px
+$font-size-mid = 18px
+$font-size-basic = 16px
+$font-size-small = 12px
+$font-size-tiny = 10px
 
 grid-maker(98%, $gutter, s)
 
 space-maker($margin-micro, $margin-tiny, $margin-small, $margin-basic, $margin-mid, $margin-large)
 
-font-sizes($font-size-basic, $font-size-extra, $font-size-large, $font-size-mid, $font-size-small, $font-size-tiny)
+font-sizes($font-size-basic, false, $font-size-large, $font-size-mid, $font-size-small, $font-size-tiny)
 
 .ornament
   font-feature-settings: "ornm"
@@ -36,7 +35,7 @@ font-sizes($font-size-basic, $font-size-extra, $font-size-large, $font-size-mid,
 
 .gallery-thumb-holder
   display: inline-block
-  padding: 0 $margin-basic $margin-basic 0
+  padding: 0 $margin-small $margin-small 0
   img
     max-width: 130px
     max-height: 130px
@@ -149,3 +148,37 @@ font-sizes($font-size-basic, $font-size-extra, $font-size-large, $font-size-mid,
   &.active
     opacity: 1
     pointer-events: auto
+
+.entry-content
+  width: 60%
+  margin-left: auto
+  margin-right: auto
+
+.entry-content > *
+  padding-left: $margin-tiny
+  padding-right: $margin-tiny
+
+.alignwide
+  margin-left: calc(unquote('-100% / 60 * 10')) !important
+  margin-right: calc(unquote('-100% / 60 * 10')) !important
+  max-width: calc(unquote('(100% / 60) * 80)'))
+  text-align: center
+
+.alignfull
+  margin-left: calc(unquote('-100% / 60 * 20')) !important
+  margin-right: calc(unquote('-100% / 60 * 20')) !important
+  max-width: calc(unquote('(100% / 60) * 100)'))
+  text-align: center
+
+.wp-block-embed__wrapper
+  position: relative
+  padding-bottom: 56.25%
+  height: 0
+  overflow: hidden
+  max-width: 100%
+  iframe, object, embed
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%

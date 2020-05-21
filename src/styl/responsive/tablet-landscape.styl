@@ -1,6 +1,6 @@
 @media screen and (min-width: 1024px)
 
-  $gutter = 20px
+  $gutter = 40px
 
   $margin-micro = ($gutter / 3)
   $margin-tiny = ($gutter / 2)
@@ -9,19 +9,27 @@
   $margin-mid = ($gutter * 3)
   $margin-large = ($gutter * 4)
 
-  $font-size-basic = 16px
+  $font-size-large = 32px
+  $font-size-mid = 24px
+  $font-size-basic = 18px
+  $font-size-small = 14px
+  $font-size-tiny = 11px
 
   grid-maker(98%, $gutter, l)
 
   space-maker($margin-micro, $margin-tiny, $margin-small, $margin-basic, $margin-mid, $margin-large)
 
-  font-sizes($font-size-basic)
+  font-sizes($font-size-basic, false, $font-size-large, $font-size-mid, $font-size-small, $font-size-tiny)
 
   .desktop-only
     display: initial !important
 
   .gallery-thumb-holder
-    padding: 0 $margin-basic $margin-basic 0
+    padding: 0 $margin-small $margin-small 0
     img
       max-width: 270px
       max-height: 270px
+
+  .entry-content > *
+    padding-left: $margin-tiny
+    padding-right: $margin-tiny
