@@ -5,8 +5,16 @@ function add_menu_icons_styles(){
 ?>
 
 <style>
+#menu-posts .dashicons-admin-post:before {
+    content: '\f123';
+}
+
 #menu-posts-project .dashicons-admin-post:before {
-    content: '\f319';
+    content: '\f128';
+}
+
+#menu-posts-note .dashicons-admin-post:before {
+    content: '\f157';
 }
 </style>
 
@@ -68,4 +76,59 @@ function register_cpt_project() {
   );
 
   register_post_type( 'project', $args );
+}
+
+//Register Custom Post Types
+add_action( 'init', 'register_cpt_note' );
+
+function register_cpt_note() {
+
+  $labels = array(
+    'name' => _x( 'Notes', 'note' ),
+    'singular_name' => _x( 'Note', 'note' ),
+    'add_new' => _x( 'Add New', 'note' ),
+    'add_new_item' => _x( 'Add New Note', 'note' ),
+    'edit_item' => _x( 'Edit Note', 'note' ),
+    'new_item' => _x( 'New Note', 'note' ),
+    'view_item' => _x( 'View Note', 'note' ),
+    'search_items' => _x( 'Search Notes', 'note' ),
+    'not_found' => _x( 'No notes found', 'note' ),
+    'not_found_in_trash' => _x( 'No notes found in Trash', 'note' ),
+    'parent_item_colon' => _x( 'Parent Note:', 'note' ),
+    'menu_name' => _x( 'Notes', 'note' ),
+  );
+
+  $args = array(
+    'labels' => $labels,
+    'hierarchical' => false,
+
+    'supports' => array( 'title', 'editor', 'thumbnail' ),
+
+    'public' => true,
+    'show_ui' => true,
+    'show_in_menu' => true,
+    'menu_position' => 5,
+
+    'show_in_nav_menus' => true,
+    'publicly_queryable' => true,
+    'exclude_from_search' => false,
+    'has_archive' => true,
+    'query_var' => true,
+    'can_export' => true,
+    'rewrite' => true,
+    'capability_type' => 'post',
+
+    'show_in_rest'        => true,
+    /*'template'          => array(
+      array( 'core/heading', array(
+        'level' => '5', 'content' => 'Some List' ) ),
+      array( 'core/list' ),
+      array( 'core/heading', array(
+        'level' => '5', 'content' => 'Some Text' ) ),
+      array( 'core/paragraph' )
+    ),*/
+		//'template_lock'     => 'all',
+  );
+
+  register_post_type( 'note', $args );
 }
