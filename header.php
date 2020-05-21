@@ -31,8 +31,8 @@ $options = get_site_option('_igv_site_options');
 ?>
 
 <section id="main-container">
-  <main class="container grid-row padding-top-basic">
-    <header id="header" class="grid-item item-s-12 item-m-6 item-l-4">
+  <main class="container grid-row padding-top-small">
+    <header id="header" class="grid-item item-s-12 item-m-6 item-l-4 margin-bottom-small">
       <h1 class="font-size-large"><a href="<?php echo home_url(); ?>"><em><?php bloginfo('name'); ?></em></a></h1>
       <div class="font-size-mid">
         <div>
@@ -59,7 +59,7 @@ $options = get_site_option('_igv_site_options');
         $info_page = get_page_by_path('info');
         if ($info_page) {
       ?>
-      <div class="margin-top-tiny">
+      <div class="margin-top-micro">
         <a href="<?php echo get_permalink($info_page); ?>">General Information and Mailing List</a>
       </div>
       <?php
