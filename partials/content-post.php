@@ -24,7 +24,7 @@ $authors = get_post_meta($post->ID, '_igv_post_authors', true);
   </div>
 </div>
 
-<article id="single-post" <?php post_class('grid-item no-gutter item-s-12 grid-row'); ?> id="post-<?php the_ID(); ?>">
+<article <?php post_class('single-post grid-item no-gutter item-s-12 grid-row'); ?> id="post-<?php the_ID(); ?>">
   <header class="u-visuallyhidden">
     <h1><?php the_title(); ?></h1>
   </header>
