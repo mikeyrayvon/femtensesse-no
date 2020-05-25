@@ -136,5 +136,17 @@ function igv_cmb_metaboxes() {
     'show_on_cb'    => 'igv_exclude_field',
 	) );
 
+  $note_metabox = new_cmb2_box( array(
+		'id'            => $prefix . 'note_metabox',
+		'title'         => esc_html__( 'Note Options', 'cmb2' ),
+		'object_types'  => array( 'note' ), // Post type
+	) );
+
+  $note_metabox->add_field( array(
+  	'name'    => 'Note Link',
+  	'id'      => $prefix . 'note_link',
+  	'type'    => 'text',
+  ) );
+
 }
 ?>
