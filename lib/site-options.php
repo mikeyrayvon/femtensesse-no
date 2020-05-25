@@ -62,6 +62,21 @@ function igv_register_theme_options_metabox() {
   ) );
 
   $site_options->add_field( array(
+    'name'    => esc_html__( 'Hours', 'cmb2' ),
+    'id'      => 'contact_hours',
+    'type'    => 'textarea_small',
+    'default' => 'Wednesday – Saturday, 12:00 – 16:00
+or by appointment'
+  ) );
+
+  $site_options->add_field( array(
+    'name'    => esc_html__( 'Mailchimp Action', 'cmb2' ),
+    'id'      => 'mailchimp_action',
+    'type'    => 'text',
+    'default' => 'https://femtensesse.us19.list-manage.com/subscribe/post?u=664b0804fdbd7f516b8fde26e&amp;id=005711035b'
+  ) );
+
+  $site_options->add_field( array(
     'name'    => esc_html__( 'Social Media', 'cmb2' ),
     'desc'    => esc_html__( 'Urls and accounts for different social media platforms. For use in menus and metadata', 'cmb2' ),
     'id'      => $prefix . 'socialmedia_title',
