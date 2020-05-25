@@ -3,6 +3,7 @@ $title = get_post_meta($post->ID, '_igv_project_title', true);
 $solo = get_post_meta($post->ID, '_igv_project_solo', true);
 $artists = get_post_meta($post->ID, '_igv_project_artists', true);
 $location = get_post_meta($post->ID, '_igv_project_location', true);
+$disable_link = get_post_meta($post->ID, '_igv_project_disable_link', true);
 
 $item_classes = $is_top ? 'item-l-8 grid-row no-gutter query-item-top' : 'item-m-6 item-l-4';
 ?>
@@ -11,14 +12,14 @@ $item_classes = $is_top ? 'item-l-8 grid-row no-gutter query-item-top' : 'item-m
 
   <?php if ($is_top) { ?>
   <div id="top-thumb-holder" class="grid-item item-s-12 item-m-6 item-l-auto">
-    <a href="<?php the_permalink(); ?>">
+    <?php if (empty($disable_link)) { ?><a href="<?php the_permalink(); ?>"><?php } ?>
       <?php the_post_thumbnail('full'); ?>
-    </a>
+    <?php if (empty($disable_link)) { ?></a><?php } ?>
   </div>
   <?php } ?>
 
   <div class="<?php echo $is_top ? 'grid-item item-s-12 item-m-6 item-l-auto': ''; ?>">
-    <a href="<?php the_permalink(); ?>">
+    <?php if (empty($disable_link)) { ?><a href="<?php the_permalink(); ?>"><?php } ?>
       <h3 class="font-size-large">
         <?php
           echo !$solo && !empty($title) ? '<div><em class="js-fix-widows">' . $title . '</em></div>' : '';
@@ -30,6 +31,6 @@ $item_classes = $is_top ? 'item-l-8 grid-row no-gutter query-item-top' : 'item-m
       </h3>
       <?php igv_project_dates($post->ID);?>
       <?php echo !empty($location) ? '<div class="no-p-margin-bottom">' . apply_filters('the_content', $location) . '</div>' : ''; ?>
-    </a>
+    <?php if (empty($disable_link)) { ?></a><?php } ?>
   </div>
 </article>

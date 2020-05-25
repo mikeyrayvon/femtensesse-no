@@ -129,6 +129,13 @@ function igv_cmb_metaboxes() {
   ) );
 
   $project_metabox->add_field( array(
+  	'name'    => 'Disable link',
+    'desc'    => 'Disables link to project page',
+  	'id'      => $prefix . 'project_disable_link',
+  	'type'    => 'checkbox',
+  ) );
+
+  $project_metabox->add_field( array(
     'name'    => 'Image Gallery',
 		'id'           => $prefix . 'images',
 		'type'         => 'file_list',
