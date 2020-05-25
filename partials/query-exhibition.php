@@ -4,20 +4,20 @@ $solo = get_post_meta($post->ID, '_igv_project_solo', true);
 $artists = get_post_meta($post->ID, '_igv_project_artists', true);
 $location = get_post_meta($post->ID, '_igv_project_location', true);
 
-$item_classes = $is_top ? 'item-l-8 grid-row no-gutter justify-end' : 'item-l-4';
+$item_classes = $is_top ? 'item-l-8 grid-row no-gutter query-item-top' : 'item-m-6 item-l-4';
 ?>
 
-<article <?php post_class('grid-item item-s-12 item-m-6 ' . $item_classes); ?> id="post-<?php the_ID(); ?>">
+<article <?php post_class('query-item grid-item item-s-12 ' . $item_classes); ?> id="post-<?php the_ID(); ?>">
 
   <?php if ($is_top) { ?>
-  <div class="grid-item item-s-auto text-align-right top-thumb-holder">
+  <div id="top-thumb-holder" class="grid-item item-s-12 item-m-6 item-l-auto">
     <a href="<?php the_permalink(); ?>">
       <?php the_post_thumbnail('full'); ?>
     </a>
   </div>
   <?php } ?>
 
-  <div class="<?php echo $is_top ? 'grid-item item-s-auto': ''; ?>">
+  <div class="<?php echo $is_top ? 'grid-item item-s-12 item-m-6 item-l-auto': ''; ?>">
     <a href="<?php the_permalink(); ?>">
       <h3 class="font-size-large">
         <?php

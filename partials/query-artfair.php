@@ -5,7 +5,7 @@ $location = get_post_meta($post->ID, '_igv_project_location', true);
 $fair = get_post_meta($post->ID, '_igv_project_fair', true);
 ?>
 
-<article <?php post_class('grid-item item-s-6 item-m-4 item-l-3'); ?> id="post-<?php the_ID(); ?>">
+<article <?php post_class('query-item grid-item item-s-12 item-m-4 item-l-3'); ?> id="post-<?php the_ID(); ?>">
   <div class="<?php echo $is_top ? 'grid-item item-s-auto': ''; ?>">
     <a href="<?php the_permalink(); ?>">
       <h3 class="font-size-mid">

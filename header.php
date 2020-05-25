@@ -30,40 +30,41 @@ get_template_part('partials/seo');
 $options = get_site_option('_igv_site_options');
 ?>
 
-<section id="main-container">
-  <main class="container grid-row padding-top-small">
-    <header id="header" class="grid-item item-s-12 item-m-6 item-l-4 margin-bottom-small">
-      <h1 class="font-size-large"><a href="<?php echo home_url(); ?>"><em><?php bloginfo('name'); ?></em></a></h1>
-      <div class="font-size-mid">
-        <div>
+<main id="main-container" class="padding-top-small">
+  <section>
+    <div class="container grid-row">
+
+      <header id="header" class="grid-item item-s-12 item-m-6 item-l-4">
+        <h1 class="font-size-large"><a href="<?php echo home_url(); ?>"><em><?php bloginfo('name'); ?></em></a></h1>
+        <div class="font-size-mid not-mobile">
+          <div>
+          <?php
+            if (!empty($options['contact_address'])) {
+              echo !empty($options['contact_map_link']) ? '<a href="' . $options['contact_map_link'] . '">' : '';
+              echo '<span class="no-p-margin-bottom">' . apply_filters('the_content', $options['contact_address']) . '</span>';
+              echo !empty($options['contact_map_link']) ? '</a>' : '';
+            }
+          ?>
+          </div>
+          <div>
+          <?php
+            echo !empty($options['contact_phone']) ? '<a href="tel:' . str_replace(' ', '', $options['contact_phone']) . '">' . $options['contact_phone'] . '</a>' : '';
+          ?>
+          </div>
+          <div>
+          <?php
+            echo !empty($options['contact_email']) ? '<a href="mailto:' . str_replace(' ', '', $options['contact_email']) . '">' . $options['contact_email'] . '</a>' : '';
+          ?>
+          </div>
+        </div>
         <?php
-          if (!empty($options['contact_address'])) {
-            echo !empty($options['contact_map_link']) ? '<a href="' . $options['contact_map_link'] . '">' : '';
-            echo '<span class="no-p-margin-bottom">' . apply_filters('the_content', $options['contact_address']) . '</span>';
-            echo !empty($options['contact_map_link']) ? '</a>' : '';
+          $info_page = get_page_by_path('info');
+          if ($info_page) {
+        ?>
+        <div class="margin-top-micro">
+          <a href="<?php echo get_permalink($info_page); ?>">General Information and Mailing List</a>
+        </div>
+        <?php
           }
         ?>
-        </div>
-        <div>
-        <?php
-          echo !empty($options['contact_phone']) ? '<a href="tel:' . str_replace(' ', '', $options['contact_phone']) . '">' . $options['contact_phone'] . '</a>' : '';
-        ?>
-        </div>
-        <div>
-        <?php
-          echo !empty($options['contact_email']) ? '<a href="mailto:' . str_replace(' ', '', $options['contact_email']) . '">' . $options['contact_email'] . '</a>' : '';
-        ?>
-        </div>
-      </div>
-      <?php
-        $info_page = get_page_by_path('info');
-        if ($info_page) {
-      ?>
-      <div class="margin-top-micro">
-        <a href="<?php echo get_permalink($info_page); ?>">General Information and Mailing List</a>
-      </div>
-      <?php
-        }
-      ?>
-      </div>
-    </header>
+      </header>

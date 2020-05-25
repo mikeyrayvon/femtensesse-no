@@ -8,7 +8,7 @@ $fair = get_post_meta($post->ID, '_igv_project_fair', true);
 $images = get_post_meta($post->ID, '_igv_images', true);
 ?>
 
-<div class="grid-item no-gutter item-s-12 item-m-6 item-l-8 grid-row justify-end margin-bottom-small">
+<div id="single-header" class="single-header-project grid-item no-gutter item-s-12 item-m-6 item-l-8 grid-row justify-end">
   <div class="grid-item item-s-12 item-l-6">
     <div class="font-size-large">
       <?php
@@ -30,14 +30,14 @@ $images = get_post_meta($post->ID, '_igv_images', true);
     <h1><?php the_title(); ?></h1>
   </header>
 
-  <div class="grid-item item-s-12 item-m-8">
+  <div id="project-gallery-holder" class="grid-item item-s-12 item-m-6 item-l-8 grid-row no-gutter">
     <?php
       if (empty($images)) {
         echo '&nbsp;';
       } else {
         foreach ($images as $id => $url) {
     ?>
-      <div class="gallery-thumb-holder">
+      <div class="gallery-thumb-holder grid-item item-s-4 item-m-6 margin-bottom-small">
         <?php echo wp_get_attachment_image($id, 'full', false, array('class' => 'toggle-overlay u-pointer gallery-thumb', 'data-id' => $id)); ?>
       </div>
     <?php
@@ -46,7 +46,7 @@ $images = get_post_meta($post->ID, '_igv_images', true);
     ?>
   </div>
 
-  <div class="grid-item item-s-12 item-m-4">
+  <div id="project-content-holder" class="grid-item item-s-12 item-m-6 item-l-4">
     <?php the_content(); ?>
   </div>
 

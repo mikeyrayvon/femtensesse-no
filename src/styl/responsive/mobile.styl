@@ -1,4 +1,4 @@
-$gutter = 20px
+$gutter = 30px
 
 $margin-micro = ($gutter / 3)
 $margin-tiny = ($gutter / 2)
@@ -7,6 +7,7 @@ $margin-basic = ($gutter * 2)
 $margin-mid = ($gutter * 3)
 $margin-large = ($gutter * 4)
 
+$font-size-extra = 28px
 $font-size-large = 24px
 $font-size-mid = 18px
 $font-size-basic = 16px
@@ -17,30 +18,89 @@ grid-maker(98%, $gutter, s)
 
 space-maker($margin-micro, $margin-tiny, $margin-small, $margin-basic, $margin-mid, $margin-large)
 
-font-sizes($font-size-basic, false, $font-size-large, $font-size-mid, $font-size-small, $font-size-tiny)
+font-sizes($font-size-basic, $font-size-extra, $font-size-large, $font-size-mid, $font-size-small, $font-size-tiny)
+
+.not-mobile
+  display: none !important
+
+.background-alabaster
+  background-color: $color-alabaster
+
+.background-white
+  background-color: $color-white
+
+html
+  background-color: $color-alabaster
+
+body
+  background-color: $color-white
 
 .ornament
   font-feature-settings: "ornm"
+
+.note-text, .note-link
+  p:first-child:before
+    content: '3 '
+    font-feature-settings: "ornm"
+    display: inline-block
+    padding-right: .2em
+
+.note-link p:first-child:before
+  content: '1 '
 
 .no-p-margin-bottom
   p
     margin-bottom: 0
 
-.top-thumb-holder
+#main-container
+  &.scroll-locked
+    width: 100%
+    left: 0
+    position: fixed
+    pointer-events: none
+    overflow: hidden
+
+#header
+  text-align: center
+  margin-bottom: $margin-small
+
+#query-row
+  padding-top: $margin-small
+  padding-bottom: $margin-small
+
+.query-item
+  text-align: center
+  margin-bottom: $margin-small
+
+#top-thumb-holder
+  text-align: center
+  margin-bottom: $margin-small
   img
     max-width: 350px
     max-height: 350px
     height: auto
     width: auto
 
-.gallery-thumb-holder
-  display: inline-block
-  padding: 0 $margin-small $margin-small 0
-  img
-    max-width: 130px
-    max-height: 130px
-    height: auto
-    width: auto
+#query-row
+  flex-wrap: wrap
+  justify-content: center
+
+#single-header,
+#project-gallery-holder,
+#project-content-holder,
+#single-post
+  margin-bottom: $margin-small
+
+#single-header
+  text-align: center
+
+#single-post-ornament-holder
+  margin-bottom: 0.2em
+
+#project-gallery-holder
+  display: flex
+  align-content: flex-start
+  align-items: flex-end
 
 #overlay-gallery
   position: fixed
@@ -93,13 +153,14 @@ font-sizes($font-size-basic, false, $font-size-large, $font-size-mid, $font-size
   pointer-events: none
 
 .slide-caption
-  padding: $margin-basic
+  padding: $margin-small
   span
     pointer-events: auto
   &.show-info
     .slide-caption-info-trigger
       display: none
     .slide-caption-info
+      pointer-events: auto
       display: block
 
 .slide-caption-info
@@ -113,9 +174,10 @@ font-sizes($font-size-basic, false, $font-size-large, $font-size-mid, $font-size
   width: 100%
   height: 100%
   z-index: 800
+  font-size: 3em
   .slide-control
     pointer-events: auto
-    padding: $margin-basic
+    padding: $margin-tiny $margin-small
 
 #gallery-close
   position: absolute
@@ -125,8 +187,9 @@ font-sizes($font-size-basic, false, $font-size-large, $font-size-mid, $font-size
   height: 100%
   pointer-events: none
   z-index: 1000
+  font-size: 2em
   .toggle-overlay
-    padding: $margin-basic
+    padding: $margin-tiny $margin-small
     pointer-events: auto
 
 #gallery-zoom

@@ -3,13 +3,14 @@ $title = get_post_meta($post->ID, '_igv_post_title', true);
 $authors = get_post_meta($post->ID, '_igv_post_authors', true);
 ?>
 
-<div class="grid-item item-s-12 item-m-6 grid-row align-items-end justify-center margin-bottom-small">
+<div id="single-header" class="grid-item item-s-12 item-m-6 grid-row align-items-end justify-center margin-bottom-small">
   <div class="text-align-center">
-    <div class="font-size-large">
+    <div class="font-size-extra">
       <?php
         echo !empty($title) ? '<em class="js-fix-widows">' . $title . '</em>' : '';
       ?>
     </div>
+    <div id="single-post-ornament-holder"><span class="ornament">2</span></div>
     <div><?php
       if (!empty($authors)) {
         foreach ($authors as $key => $value) {
@@ -23,7 +24,7 @@ $authors = get_post_meta($post->ID, '_igv_post_authors', true);
   </div>
 </div>
 
-<article <?php post_class('grid-item no-gutter item-s-12 grid-row'); ?> id="post-<?php the_ID(); ?>">
+<article id="single-post" <?php post_class('grid-item no-gutter item-s-12 grid-row'); ?> id="post-<?php the_ID(); ?>">
   <header class="u-visuallyhidden">
     <h1><?php the_title(); ?></h1>
   </header>
@@ -32,5 +33,9 @@ $authors = get_post_meta($post->ID, '_igv_post_authors', true);
     <div class="entry-content">
       <?php the_content(); ?>
     </div>
+  </div>
+
+  <div class="grid-item item-s-12 text-align-right">
+    <?php the_date('j F Y'); ?>
   </div>
 </article>

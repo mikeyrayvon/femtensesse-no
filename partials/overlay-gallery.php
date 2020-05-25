@@ -26,7 +26,7 @@ if (!empty($images)) {
     <?php } ?>
     </div>
   </div>
-  <div id="slide-controls" class="font-size-mid grid-row align-items-center justify-between <?php echo count($images) === 1 ? 'u-hidden' : ''; ?>">
+  <div id="slide-controls" class="grid-row align-items-center justify-between <?php echo count($images) === 1 ? 'u-hidden' : ''; ?>">
     <div>
       <span class="slide-control slide-prev u-pointer">&lsaquo;</span>
     </div>
