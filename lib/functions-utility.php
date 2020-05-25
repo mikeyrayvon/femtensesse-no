@@ -83,15 +83,15 @@ function igv_project_dates($post_id) {
     if (empty($start) || empty($end)) {
       $date = !empty($end) ? $end : $start;
       echo '<time datetime="' . date('Y-m-d', $date) . '">';
-      echo date('F j, Y', $date);
+      echo date('j F Y', $date);
       echo '</time>';
     } else {
       $same_year = date('Y', $start) === date('Y', $end);
       echo '<time datetime="' . date('Y-m-d', $start) . '">';
-      echo $same_year ? date('F j', $start) : date('F j, Y', $start);
+      echo $same_year ? date('j F', $start) : date('j F Y', $start);
       echo '</time> — ';
       echo '<time datetime="' . date('Y-m-d', $end) . '">';
-      echo date('F j, Y', $end);
+      echo date('j F Y', $end);
       echo '</time>';
     }
     echo '</div>';
