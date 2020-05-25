@@ -28,7 +28,19 @@ class Site {
     this.setupSwiper();
   }
 
+  toggleScrollLock() {
+    var $main = $('#main-container');
+    if ($main.hasClass('scroll-locked')) {
+      $main.removeClass('scroll-locked').css('top', 'unset');
+      $(window).scrollTop(this.lockOffset);
+    } else {
+      this.lockOffset = $(window).scrollTop();
+      $main.addClass('scroll-locked').css('top', -(this.lockOffset));
+    }
+  }
+
   setupSwiper() {
+    var _this = this;
     var $swiperContainer = $('.swiper-container');
     var slidesLength = $swiperContainer.find('.swiper-slide').length;
     var swiperArgs = {
@@ -53,6 +65,8 @@ class Site {
     var swiperInstance = new Swiper ('.swiper-container', swiperArgs);
 
     $('.toggle-overlay').on('click', function(event) {
+      _this.toggleScrollLock();
+
       var $target = $(event.target);
       $('#overlay-gallery').toggleClass('active');
       $('.swiper-slide.zoomed').removeClass('zoomed');
