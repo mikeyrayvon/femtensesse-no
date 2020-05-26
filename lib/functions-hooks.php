@@ -27,9 +27,7 @@ function igv_setup() {
   add_theme_support( 'align-wide' );
 }
 
-add_filter( 'allowed_block_types', 'igv_allow_core_blocks' );
-function igv_allow_core_blocks( $allowed_blocks, $post ) {
-
+function igv_allowed_block_types( $allowed_blocks, $post ) {
   $allowed_blocks = array(
     'core/paragraph',
     'core/heading',
@@ -70,3 +68,4 @@ function igv_allow_core_blocks( $allowed_blocks, $post ) {
 
 	return $allowed_blocks;
 }
+add_filter( 'allowed_block_types', 'igv_allowed_block_types', 10, 2 );
