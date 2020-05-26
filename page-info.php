@@ -45,7 +45,7 @@ if (have_posts()) {
           <button type="submit" id="mailchimp-submit" class="font-serif font-size-mid">Subscribe</button>
         </div>
       </form>
-      <div id="mailchimp-response" class="margin-top-micro">&nbsp;</div>
+      <div id="mailchimp-response" class="margin-top-micro font-size-small">&nbsp;</div>
       <?php } ?>
     </div>
 
