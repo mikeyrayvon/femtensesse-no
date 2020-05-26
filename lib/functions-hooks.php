@@ -28,7 +28,7 @@ function igv_setup() {
 }
 
 add_filter( 'allowed_block_types', 'igv_allow_core_blocks' );
-function igv_allow_core_blocks( $allowed_block_types ) {
+function igv_allow_core_blocks( $allowed_blocks, $post ) {
 
   $allowed_blocks = array(
     'core/paragraph',
