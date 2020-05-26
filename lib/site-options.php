@@ -97,7 +97,7 @@ or by appointment'
 
   $site_options->add_field( array(
     'name'    => esc_html__( 'Instagram Account Handle', 'cmb2' ),
-    'id'      => 'insta',
+    'id'      => 'socialmedia_instagram',
     'type'    => 'text',
     'default' => 'femtensesse'
   ) );
