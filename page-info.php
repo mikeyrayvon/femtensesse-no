@@ -31,7 +31,7 @@ if (have_posts()) {
     <div id="mailchimp-holder" class="grid-item no-gutter item-s-12 item-m-6 item-l-8 grid-row">
       <?php if (!empty($options['mailchimp_action'])) { ?>
       <div class="grid-item item-s-12 margin-bottom-tiny">
-        <span class="font-size-mid">Join our Mailing List</span>
+        <span class="font-size-mid">Sign up for our mailing list</span>
       </div>
 
       <form novalidate="true" id="mailchimp-form" class="item-s-12 item-l-9 no-gutter grid-row">
