@@ -29,30 +29,44 @@ function igv_setup() {
 
 add_filter( 'allowed_block_types', 'igv_allow_core_blocks' );
 function igv_allow_core_blocks( $allowed_block_types ) {
-  return array(
+
+  $allowed_blocks = array(
     'core/paragraph',
-    'core/image',
     'core/heading',
-    'core/gallery',
     'core/list',
-    'core/quote',
-    'core/shortcode',
-    'core/archives',
     'core/audio',
-    'core/button',
-    'core/code',
-    'core/embed',
-    'core-embed/twitter',
+    'core/image',
+    'core/quote',
+    'core/pullquote',
     'core-embed/youtube',
-    'core-embed/instagram',
-    'core-embed/soundcloud',
-    'core-embed/spotify',
     'core-embed/vimeo',
-    'core-embed/reddit',
-    'core/file',
-    'core/separator',
-    'core/block',
-    'core/spacer',
+    'core-embed/soundcloud',
     'core/video'
   );
+
+  if( $post->post_type !== 'project' ) {
+		$allowed_blocks = array(
+      'core/paragraph',
+      'core/heading',
+      'core/list',
+      'core/audio',
+      'core/image',
+      'core/quote',
+      'core/pullquote',
+      'core-embed/youtube',
+      'core-embed/vimeo',
+      'core-embed/soundcloud',
+      'core/video'
+    );
+	};
+
+  if( $post->post_type !== 'note' ) {
+		$allowed_blocks = array(
+      'core/paragraph',
+      'core/list',
+      'core/audio',
+    );
+	};
+
+	return $allowed_blocks;
 }
