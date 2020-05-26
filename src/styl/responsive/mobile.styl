@@ -35,6 +35,13 @@ html
 body
   background-color: $color-white
 
+*
+  &:focus
+    outline: rgb(208, 208, 208) auto 5px
+
+::selection
+  background-color: rgb(234, 234, 234)
+
 .ornament
   font-feature-settings: "ornm"
 
@@ -309,7 +316,10 @@ input, button
 
 input
   border: none
-  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23333' stroke-width='2' stroke-dasharray='5%2c 10' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23080808' stroke-width='2' stroke-dasharray='5%2c 10' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+  &:focus
+    outline: none
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23d0d0d0' stroke-width='2' stroke-dasharray='5%2c 10' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
 
 button
   padding-bottom: .95em
