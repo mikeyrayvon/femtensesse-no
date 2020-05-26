@@ -121,11 +121,11 @@ var _lazysizes = __webpack_require__(7);
 
 var _lazysizes2 = _interopRequireDefault(_lazysizes);
 
-var _mailchimp = __webpack_require__(14);
+var _mailchimp = __webpack_require__(8);
 
 var _mailchimp2 = _interopRequireDefault(_mailchimp);
 
-__webpack_require__(8);
+__webpack_require__(9);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -20809,17 +20809,6 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 /***/ }),
 /* 8 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 9 */,
-/* 10 */,
-/* 11 */,
-/* 12 */,
-/* 13 */,
-/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20991,6 +20980,12 @@ var Mailchimp = function () {
 }();
 
 exports.default = Mailchimp;
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);
