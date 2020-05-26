@@ -66,7 +66,7 @@ if (have_posts()) {
         }
         if (!empty($options['socialmedia_instagram'])) {
         ?>
-        <div class="margin-top-micro"><span>Please follow our <a href="<?php echo $options['socialmedia_instagram']; ?>" class="link-underline">Instagram</a></span></div>
+        <div class="margin-top-micro"><span>Please follow our <a href="https://instagram.com/<?php echo $options['socialmedia_instagram']; ?>" class="link-underline">Instagram</a></span></div>
         <?php } ?>
       </div>
     </article>

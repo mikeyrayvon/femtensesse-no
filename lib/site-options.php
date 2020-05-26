@@ -97,12 +97,12 @@ or by appointment'
 
   $site_options->add_field( array(
     'name'    => esc_html__( 'Instagram Account Handle', 'cmb2' ),
-    'id'      => 'socialmedia_instagram',
+    'id'      => 'insta',
     'type'    => 'text',
-    'defualt' => 'femtensesse'
+    'default' => 'femtensesse'
   ) );
 
-  // Metadata options
+  // Metadata optionsinsta
 
   $site_options->add_field( array(
     'name'    => esc_html__( 'Metadata options', 'cmb2' ),
