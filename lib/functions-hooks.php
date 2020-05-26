@@ -44,7 +44,7 @@ function igv_allow_core_blocks( $allowed_block_types ) {
     'core/video'
   );
 
-  if( $post->post_type !== 'project' ) {
+  if( $post->post_type === 'project' ) {
 		$allowed_blocks = array(
       'core/paragraph',
       'core/heading',
@@ -60,7 +60,7 @@ function igv_allow_core_blocks( $allowed_block_types ) {
     );
 	};
 
-  if( $post->post_type !== 'note' ) {
+  if( $post->post_type === 'note' ) {
 		$allowed_blocks = array(
       'core/paragraph',
       'core/list',
