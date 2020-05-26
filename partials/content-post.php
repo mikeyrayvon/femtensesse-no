@@ -36,6 +36,6 @@ $authors = get_post_meta($post->ID, '_igv_post_authors', true);
   </div>
 
   <div class="grid-item item-s-12 text-align-right">
-    <?php the_date('j F Y'); ?>
+    <?php the_date('F j Y'); ?>
   </div>
 </article>
