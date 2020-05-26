@@ -13,7 +13,7 @@ $item_classes = $is_top ? 'item-l-8 grid-row no-gutter query-item-top' : 'item-m
   <?php if ($is_top) { ?>
   <div id="top-thumb-holder" class="grid-item item-s-12 item-m-6 item-l-auto">
     <?php if (empty($disable_link)) { ?><a href="<?php the_permalink(); ?>"><?php } ?>
-      <?php the_post_thumbnail('full'); ?>
+      <?php the_post_thumbnail('medium_large'); ?>
     <?php if (empty($disable_link)) { ?></a><?php } ?>
   </div>
   <?php } ?>

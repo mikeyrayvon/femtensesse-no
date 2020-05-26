@@ -10,9 +10,10 @@ if (!empty($images)) {
         $attachment = get_post($id);
         $caption = $attachment->post_excerpt;
         $more_info = $attachment->post_content;
+        $zoom_src = wp_get_attachment_image_src($id, 'zoom');
     ?>
       <div class="swiper-slide" data-image-id="<?php echo $id; ?>">
-        <?php echo wp_get_attachment_image($id, 'full', false, array('data-no-lazysizes' => true, 'data-full-url' => $url, 'class' => 'toggle-zoom')); ?>
+        <?php echo wp_get_attachment_image($id, 'gallery', false, array('data-no-lazysizes' => true, 'data-full-url' => $zoom_src, 'class' => 'toggle-zoom')); ?>
         <div class="slide-caption-holder">
           <div class="slide-caption">
             <span><?php echo !empty($caption) ? $caption : ''; ?></span>

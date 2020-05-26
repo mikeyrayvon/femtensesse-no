@@ -51,7 +51,7 @@ if (have_posts()) {
 
     <article <?php post_class('single-info grid-item no-gutter item-s-12 grid-row no-gutter'); ?> id="post-<?php the_ID(); ?>">
       <div class="info-section grid-item item-s-5 item-m-4 item-l-3 offset-l-1">
-        <?php the_post_thumbnail('full'); ?>
+        <?php the_post_thumbnail('medium-large'); ?>
       </div>
       <div class="info-section grid-item item-s-12 item-m-8 item-l-5 font-size-mid">
         <?php the_content(); ?>

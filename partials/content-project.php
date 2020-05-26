@@ -38,7 +38,7 @@ $images = get_post_meta($post->ID, '_igv_images', true);
         foreach ($images as $id => $url) {
     ?>
       <div class="gallery-thumb-holder grid-item item-s-4 item-m-6 margin-bottom-small">
-        <?php echo wp_get_attachment_image($id, 'full', false, array('class' => 'toggle-overlay u-pointer gallery-thumb', 'data-id' => $id)); ?>
+        <?php echo wp_get_attachment_image($id, 'medium_large', false, array('class' => 'toggle-overlay u-pointer gallery-thumb', 'data-id' => $id)); ?>
       </div>
     <?php
         }
