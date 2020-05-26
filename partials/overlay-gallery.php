@@ -13,7 +13,7 @@ if (!empty($images)) {
         $zoom_src = wp_get_attachment_image_src($id, 'zoom')[0];
     ?>
       <div class="swiper-slide" data-image-id="<?php echo $id; ?>">
-        <?php echo wp_get_attachment_image($id, 'gallery', false, array('data-no-lazysizes' => true, 'data-full-url' => $zoom_src, 'class' => 'toggle-zoom')); ?>
+        <?php echo wp_get_attachment_image($id, 'gallery', false, array('data-no-lazysizes' => true, 'data-zoom-src' => $zoom_src, 'class' => 'toggle-zoom')); ?>
         <div class="slide-caption-holder">
           <div class="slide-caption">
             <span><?php echo !empty($caption) ? $caption : ''; ?></span>
@@ -23,6 +23,8 @@ if (!empty($images)) {
             <?php } ?>
           </div>
         </div>
+        <?php echo wp_get_attachment_image($id, 'zoom', false, array('data-no-lazysizes' => true, 'class' => 'slide-zoom-image toggle-zoom')); ?>
+        <!--img src="" class="slide-zoom-image toggle-zoom"-->
       </div>
     <?php } ?>
     </div>

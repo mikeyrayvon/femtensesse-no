@@ -176,12 +176,21 @@ var Site = function () {
 
       (0, _jquery2.default)('.toggle-zoom').on('click', function (event) {
         var $slide = (0, _jquery2.default)(event.target).parent('.swiper-slide');
+        var $zoomImg = $slide.find('.slide-zoom-image');
+        /*var zoomSrc = $(event.target).attr('data-zoom-src');
+         console.log(zoomSrc);
+         $zoomImg.attr('src', zoomSrc);*/
+
         $slide.toggleClass('zoomed');
 
         var windowHeight = (0, _jquery2.default)(window).height();
-        var height = (0, _jquery2.default)(event.target).height();
+        var zoomHeight = $zoomImg.outerHeight();
 
-        $slide.scrollTop((height - windowHeight) / 2);
+        if (zoomHeight > windowHeight) {
+          $slide.scrollTop((zoomHeight - windowHeight) / 2);
+        } else {
+          $zoomImg.css('margin-top', (windowHeight - zoomHeight) / 2 + 'px');
+        }
       });
 
       (0, _jquery2.default)('.slide-caption-info-trigger').on('click', function (event) {

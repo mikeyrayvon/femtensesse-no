@@ -80,12 +80,23 @@ class Site {
 
     $('.toggle-zoom').on('click', function(event) {
       var $slide = $(event.target).parent('.swiper-slide');
+      var $zoomImg = $slide.find('.slide-zoom-image');
+      /*var zoomSrc = $(event.target).attr('data-zoom-src');
+
+      console.log(zoomSrc);
+
+      $zoomImg.attr('src', zoomSrc);*/
+
       $slide.toggleClass('zoomed');
 
       var windowHeight = $(window).height();
-      var height = $(event.target).height();
+      var zoomHeight = $zoomImg.outerHeight();
 
-      $slide.scrollTop((height - windowHeight)/2);
+      if (zoomHeight > windowHeight) {
+        $slide.scrollTop((zoomHeight - windowHeight) / 2);
+      } else {
+        $zoomImg.css('margin-top', ((windowHeight - zoomHeight) / 2) + 'px');
+      }
     });
 
     $('.slide-caption-info-trigger').on('click', function(event) {

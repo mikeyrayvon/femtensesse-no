@@ -131,14 +131,21 @@ body
       width: auto
       max-height: 100%
       cursor: zoom-in
+    .slide-zoom-image
+      display: none
     &.zoomed
       display: block
       overflow: scroll
       img
+        display: none
+      .slide-zoom-image
         max-height: none
         max-width: 100%
         height: auto
         cursor: zoom-out
+        display: block
+        margin-left: auto
+        margin-right: auto
       .slide-caption-holder
         opacity: 0
         .slide-caption span
