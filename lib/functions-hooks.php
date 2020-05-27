@@ -39,7 +39,8 @@ function igv_allowed_block_types( $allowed_blocks, $post ) {
     'core-embed/youtube',
     'core-embed/vimeo',
     'core-embed/soundcloud',
-    'core/video'
+    'core/video',
+    'core/group'
   );
 
   if( $post->post_type === 'project' ) {

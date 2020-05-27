@@ -6,7 +6,7 @@ $authors = get_post_meta($post->ID, '_igv_post_authors', true);
 <article <?php post_class('query-item query-item-post grid-item item-s-8 item-m-4 item-l-3 text-align-center'); ?> id="post-<?php the_ID(); ?>">
   <a href="<?php the_permalink(); ?>">
     <h3 class="font-size-mid"><em><?php echo !empty($title) ? $title : ''; ?></em></h3>
-    <div><span class="ornament">2</span></div>
+    <div class="query-post-ornament-holder"><?php get_template_part('partials/icon-post.svg'); ?></div>
     <div><?php
       if (!empty($authors)) {
         foreach ($authors as $key => $value) {

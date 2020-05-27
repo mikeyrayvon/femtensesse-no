@@ -47,13 +47,21 @@ body
 
 .note-text, .note-link
   p:first-child:before
-    content: '3 '
-    font-feature-settings: "ornm"
+    content: ""
     display: inline-block
-    padding-right: .2em
+    padding-right: .8em
+    height: 12.6px
+    width: .7em
+    background-size: contain
+    background-image: url(../static/icon-note-text.svg)
+    background-repeat: no-repeat
 
 .note-link p:first-child:before
-  content: '1 '
+  background-image: url(../static/icon-note-link.svg)
+  height: 11px
+  width: 1em
+
+
 
 .no-p-margin-bottom
   p
@@ -107,8 +115,16 @@ body
 #single-header
   text-align: center
 
+.query-post-ornament-holder
+  svg
+    height: .6em
+    width: auto
+
 #single-post-ornament-holder
   margin-bottom: 0.2em
+  svg
+    height: .6em
+    width: auto
 
 #project-gallery-holder
   display: flex

@@ -10,7 +10,7 @@ $authors = get_post_meta($post->ID, '_igv_post_authors', true);
         echo !empty($title) ? '<em class="js-fix-widows">' . $title . '</em>' : '';
       ?>
     </div>
-    <div id="single-post-ornament-holder"><span class="ornament">2</span></div>
+    <div id="single-post-ornament-holder"><?php get_template_part('partials/icon-post.svg'); ?></div>
     <div><?php
       if (!empty($authors)) {
         foreach ($authors as $key => $value) {
