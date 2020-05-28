@@ -34,13 +34,13 @@ function igv_allowed_block_types( $allowed_blocks, $post ) {
     'core/list',
     'core/audio',
     'core/image',
+    'core/gallery',
     'core/quote',
     'core/pullquote',
     'core-embed/youtube',
     'core-embed/vimeo',
     'core-embed/soundcloud',
-    'core/video',
-    'core/group'
+    'core/video'
   );
 
   if( $post->post_type === 'project' ) {
@@ -62,11 +62,10 @@ function igv_allowed_block_types( $allowed_blocks, $post ) {
   if( $post->post_type === 'note' ) {
 		$allowed_blocks = array(
       'core/paragraph',
-      'core/list',
       'core/audio',
     );
 	};
 
 	return $allowed_blocks;
 }
-add_filter( 'allowed_block_types', 'igv_allowed_block_types', 10, 2 );
+//add_filter( 'allowed_block_types', 'igv_allowed_block_types', 10, 2 );
