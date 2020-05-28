@@ -35,8 +35,11 @@ if (have_posts()) {
       </div>
 
       <form novalidate="true" id="mailchimp-form" class="item-s-12 item-l-9 no-gutter grid-row">
-        <div class="grid-item item-s-12 margin-bottom-tiny">
-          <input type="name" name="NAME" placeholder="Name" id="mailchimp-first" class="font-serif font-size-mid">
+        <div class="grid-item item-s-6 margin-bottom-tiny">
+          <input type="name" name="FNAME" placeholder="First Name" class="font-serif font-size-mid">
+        </div>
+        <div class="grid-item item-s-6 margin-bottom-tiny">
+          <input type="name" name="LNAME" placeholder="Last Name" class="font-serif font-size-mid">
         </div>
         <div class="grid-item item-s-12 item-l-8 margin-bottom-tiny">
           <input type="email" name="EMAIL" placeholder="Email" id="mailchimp-email" class="font-serif font-size-mid">
