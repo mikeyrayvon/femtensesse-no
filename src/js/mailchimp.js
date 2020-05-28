@@ -22,6 +22,7 @@ class Mailchimp {
       $('#mailchimp-form').remove();
       console.error('mailchimp action null');
     } else if (this.$form.length && WP.mailchimp !== null) {
+      this.$field = $('.mailchimp-field');
       this.$email = $('#mailchimp-email');
       this.$reply = $('#mailchimp-response');
 
@@ -131,7 +132,7 @@ class Mailchimp {
       this.$reply.removeClass('error').addClass('valid');
       this.$email.removeClass('error').addClass('valid');
 
-      this.$email.val('');
+      this.$field.val('');
     }
 
     // Show message
