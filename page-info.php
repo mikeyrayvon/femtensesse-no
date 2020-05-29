@@ -36,10 +36,10 @@ if (have_posts()) {
 
       <form novalidate="true" id="mailchimp-form" class="item-s-12 item-l-9 no-gutter grid-row">
         <div class="grid-item item-s-6 margin-bottom-tiny">
-          <input type="name" name="FNAME" placeholder="First Name" class="mailchimp-field font-serif font-size-mid">
+          <input type="name" name="FNAME" placeholder="First name" class="mailchimp-field font-serif font-size-mid">
         </div>
         <div class="grid-item item-s-6 margin-bottom-tiny">
-          <input type="name" name="LNAME" placeholder="Last Name" class="mailchimp-field font-serif font-size-mid">
+          <input type="name" name="LNAME" placeholder="Last name" class="mailchimp-field font-serif font-size-mid">
         </div>
         <div class="grid-item item-s-12 item-l-8 margin-bottom-tiny">
           <input type="email" name="EMAIL" placeholder="Email" id="mailchimp-email" class="mailchimp-field font-serif font-size-mid">
@@ -60,7 +60,7 @@ if (have_posts()) {
         <?php the_content(); ?>
       </div>
       <div class="info-section grid-item item-s-7 item-m-4 offset-m-4 item-l-3 offset-l-0">
-        <div><span>Office Hours</span></div>
+        <div><span>Opening hours</span></div>
         <?php if (!empty($options['contact_hours'])) { ?>
         <div class="no-p-margin-bottom">
           <?php echo apply_filters('the_content', $options['contact_hours']); ?>
