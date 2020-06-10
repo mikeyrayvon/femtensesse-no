@@ -86,6 +86,23 @@
   #gallery-close .toggle-overlay
       padding: $margin-tiny $margin-small
 
+  .entry-content
+    width: 60%
+    margin-left: auto
+    margin-right: auto
+
+  .alignwide
+    margin-left: calc(unquote('(-100% / 60) * 10')) !important
+    margin-right: calc(unquote('(-100% / 60) * 10')) !important
+    max-width: calc(unquote('(100% / 60) * 80'))
+    text-align: center
+
+  .alignfull
+    margin-left: calc(unquote('(-100% / 60) * 20')) !important
+    margin-right: calc(unquote('(-100% / 60) * 20')) !important
+    max-width: calc(unquote('(100% / 60) * 100'))
+    text-align: center
+
   .entry-content > *
     padding-left: $margin-tiny
     padding-right: $margin-tiny
