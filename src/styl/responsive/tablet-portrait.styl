@@ -47,6 +47,9 @@
   .query-item
     margin-bottom: $margin-small
     text-align: left
+    &:hover
+      .query-item-thumb-holder
+        opacity: 1
 
   .query-item-top
     flex-direction: row-reverse
@@ -56,6 +59,23 @@
 
   .query-item-post, .query-item-note
     padding-top: 0.3em
+
+  .query-item-thumb-holder
+    width: 100%
+    height: 100%
+    position: absolute
+    z-index: 5
+    opacity: 0
+    transition: opacity 100ms linear
+    pointer-events: none
+    margin-bottom: 0
+    img
+      display: block
+      margin: 0 auto
+
+  .query-item-details
+    position: relative
+    z-index: 10
 
   #top-thumb-holder
     text-align: left

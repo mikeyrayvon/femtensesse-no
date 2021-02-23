@@ -10,15 +10,21 @@ $item_classes = $is_top ? 'item-l-8 grid-row no-gutter query-item-top' : 'item-m
 
 <article <?php post_class('query-item grid-item item-s-12 ' . $item_classes); ?> id="post-<?php the_ID(); ?>">
 
-  <?php if ($is_top) { ?>
+<?php if ($is_top) { ?>
   <div id="top-thumb-holder" class="grid-item item-s-12 item-m-6 item-l-auto">
     <?php if (empty($disable_link)) { ?><a href="<?php the_permalink(); ?>"><?php } ?>
       <?php the_post_thumbnail('medium_large'); ?>
     <?php if (empty($disable_link)) { ?></a><?php } ?>
   </div>
-  <?php } ?>
+<?php } elseif (has_post_thumbnail()) { ?>
+  <div class="query-item-thumb-holder">
+    <?php if (empty($disable_link)) { ?><a href="<?php the_permalink(); ?>"><?php } ?>
+      <?php the_post_thumbnail('medium_large'); ?>
+    <?php if (empty($disable_link)) { ?></a><?php } ?>
+  </div>
+<?php } ?>
 
-  <div class="<?php echo $is_top ? 'grid-item item-s-12 item-m-6 item-l-auto': ''; ?>">
+  <div class="query-item-details<?php echo $is_top ? ' grid-item item-s-12 item-m-6 item-l-auto': ''; ?>">
     <?php if (empty($disable_link)) { ?><a href="<?php the_permalink(); ?>"><?php } ?>
       <h3 class="font-size-large">
         <?php
