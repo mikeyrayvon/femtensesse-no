@@ -62,7 +62,7 @@ $options = get_site_option('_igv_site_options');
           if ($info_page) {
         ?>
         <div class="margin-top-micro">
-          <a href="<?php echo get_permalink($info_page); ?>">General information and mailing list</a>
+          <a href="<?php echo get_permalink($info_page); ?>">General Information and Mailing List</a>
         </div>
         <?php
           }
