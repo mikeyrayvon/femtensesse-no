@@ -143,6 +143,8 @@ function igv_cmb_metaboxes() {
     'show_on_cb'    => 'igv_exclude_field',
 	) );
 
+  // Note
+
   $note_metabox = new_cmb2_box( array(
 		'id'            => $prefix . 'note_metabox',
 		'title'         => esc_html__( 'Note Options', 'cmb2' ),
@@ -153,6 +155,20 @@ function igv_cmb_metaboxes() {
   	'name'    => 'Note Link',
   	'id'      => $prefix . 'note_link',
   	'type'    => 'text',
+  ) );
+
+  // QR
+
+  $qr_metabox = new_cmb2_box( array(
+    'id'            => $prefix . 'qr_metabox',
+    'title'         => esc_html__( 'QR Code Options', 'cmb2' ),
+    'object_types'  => array( 'qr' ), // Post type
+  ) );
+
+  $qr_metabox->add_field( array(
+    'name'    => 'QR Link',
+    'id'      => $prefix . 'qr_link',
+    'type'    => 'file',
   ) );
 
 }
