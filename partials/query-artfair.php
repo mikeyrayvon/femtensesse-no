@@ -1,4 +1,5 @@
 <?php
+$title = get_post_meta($post->ID, '_igv_project_title', true);
 $solo = get_post_meta($post->ID, '_igv_project_solo', true);
 $artists = get_post_meta($post->ID, '_igv_project_artists', true);
 $location = get_post_meta($post->ID, '_igv_project_location', true);
@@ -11,11 +12,11 @@ $disable_link = get_post_meta($post->ID, '_igv_project_disable_link', true);
     <?php if (empty($disable_link)) { ?><a href="<?php the_permalink(); ?>"><?php } ?>
       <h3 class="font-size-mid">
         <?php
-          echo !$solo ? '<div><em class="js-fix-widows">' . get_the_title() . '</em></div>' : '';
+          echo !$solo && !empty($title) ? '<div><em class="js-fix-widows">' . $title . '</em></div>' : '';
           foreach ($artists as $artist) {
             echo '<div><span class="js-fix-widows">' . $artist . '</span></div>';
           }
-          echo $solo ? '<div><em class="js-fix-widows">' . get_the_title() . '</em></div>' : '';
+          echo $solo && !empty($title) ? '<div><em class="js-fix-widows">' . $title . '</em></div>' : '';
           echo !empty($fair) ? '<div><span>at ' . $fair . '</span></div>' : '';
         ?>
       </h3>
