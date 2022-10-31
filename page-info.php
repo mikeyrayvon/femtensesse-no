@@ -88,16 +88,5 @@ set_query_var( 'exclude_id', null );
 set_query_var( 'is_top', false );
 get_template_part('partials/query');
 
-?>
-
-<section class="background-alabaster">
-  <div class="container grid-row">
-    <div class="grid-item item-s-12 padding-bottom-tiny font-size-small">
-      <span>Website by <a href="https://interglobal.vision" class="link-underline">Interglobal Vision</a></span>
-    </div>
-  </div>
-</section>
-<?php
-
 get_footer();
 ?>
