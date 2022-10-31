@@ -8,7 +8,13 @@ $disable_link = get_post_meta($post->ID, '_igv_project_disable_link', true);
 ?>
 
 <article <?php post_class('query-item grid-item item-s-12 item-m-4 item-l-3'); ?> id="post-<?php the_ID(); ?>">
-  <div class="<?php echo $is_top ? 'grid-item item-s-auto': ''; ?>">
+  <?php if (has_post_thumbnail()) { ?>
+    <div class="query-item-thumb-holder">
+      <?php the_post_thumbnail('medium'); ?>
+    </div>
+  <?php } ?>
+
+  <div class="query-item-details<?php echo $is_top ? ' grid-item item-s-auto': ''; ?>">
     <?php if (empty($disable_link)) { ?><a href="<?php the_permalink(); ?>"><?php } ?>
       <h3 class="font-size-mid">
         <?php
